@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drpp7xo2me82c"]
+
+[ext_resource type="Script" uid="uid://cmt33sb0ij7n1" path="res://Scenes/Inimigos/inimigo_teste.gd" id="1_u7omv"]
+[ext_resource type="Texture2D" uid="uid://ijovv3gyo88e" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="2_u1j66"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4wcp"]
+radius = 6.0
+
+[node name="InimigoTeste" type="CharacterBody2D" unique_id=687978919 groups=["enemies"]]
+z_index = 2
+y_sort_enabled = true
+input_pickable = true
+script = ExtResource("1_u7omv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=173191383]
+position = Vector2(0, -8)
+texture = ExtResource("2_u1j66")
+region_enabled = true
+region_rect = Rect2(16, 144, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=819110335]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_d4wcp")

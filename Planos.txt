@@ -1,0 +1,34 @@
+# RPG Hardcore - Alguns elementos Roguelike
+O jogo so acaba quando o jogador morre
+
+Ao fim de cada vida o jogador recebe pontos para gastar com o próximo personagem
+Podendo comprar itens inicias, habilidades, pontos de talento, passivas e afins
+
+Jogador pode fazer quantas fases/modo horda quiser
+Buildar o personagem como quiser
+Farmar o quanto quiser
+Se morrer comeca do zero
+
+Seletor de dificuldade Estilo Diablo 3 e 4
+Dificuldade aumenta X% da vida, dano, experiencia e chance de drops melhores
+
+# Cidade Central
+O jogo se passa em uma vila principal (ou uma vila por mundo)
+O jogador entra em um portal e seleciona qual dungeon quer fazer (dungeons simples tem começo meio e fim)
+Colocar um modo horda pra jogar infinitamente com dificuldade que escala (começa na dificuldade Fácil e a cada X tempo aumenta 1 nivel de dificuldade até o maximo de dificuldade possível)
+Jogador tem a opção de sair do modo horda ao fim de cada horda.
+
+# Interacoes interessantes
+
+Habilidades Divinas (cura) causam dano em Mortos Vivos
+Habilidades de Veneno Curam mortos vivos
+
+
+# Ideia de gameplay:
+	Por ser um jogo Hardcore e simples os jogares podem se causar dano para mais dificuldade em grupo e coordenação
+	Possibilidade de Trazer jogador de volta à vida caso morra no modo coop (pensar em algum item para isso)
+	
+	Sistema de Itens para que possam ser customizados igual em Last Epoch
+	Sistema de habilidades ser customizada igual Path of Exile
+	
+	
