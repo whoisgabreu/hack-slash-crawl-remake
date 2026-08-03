@@ -5,7 +5,7 @@ extends Camera2D
 func _ready() -> void:
 	pass # Replace with function body.
 
-var zoom_min:float = 3.0
+var zoom_min:float = 1.0
 var zoom_max:float = 9.0
 
 

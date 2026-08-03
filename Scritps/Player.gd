@@ -24,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if is_instance_valid(target_enemy):
-		print("tem inimigo")
 		
 		marker.global_position = target_enemy.position
 		marker.visible = true

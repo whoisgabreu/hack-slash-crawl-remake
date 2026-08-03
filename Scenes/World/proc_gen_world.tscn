@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://imh5n44vnm85"]
+
+[ext_resource type="Script" uid="uid://bv50orh8cqnjf" path="res://Scritps/proc_gen_world.gd" id="1_4mw8v"]
+[ext_resource type="Texture2D" uid="uid://dyrkbolefrlcw" path="res://assets/isometric.png" id="2_3vsio"]
+[ext_resource type="PackedScene" uid="uid://c08lkc2n3jbh4" path="res://Scenes/Character/character_body_2d.tscn" id="3_r7lkc"]
+[ext_resource type="Script" uid="uid://cnuh84ubkv68c" path="res://Scenes/World/camera_2d.gd" id="4_20ge4"]
+[ext_resource type="Texture2D" uid="uid://ijovv3gyo88e" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="5_20ge4"]
+
+[sub_resource type="Gradient" id="Gradient_r7lkc"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.01923077, 0.4070513, 0.7147436, 0.8269231)
+colors = PackedColorArray(0.009947663, 0.23879623, 1, 1, 0, 0.81960785, 0.078431375, 1, 1.1792034e-06, 0.49434727, 0.029605322, 1, 0.40882504, 0.2340385, 4.813075e-08, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3vsio"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4mw8v"]
+noise = SubResource("FastNoiseLite_3vsio")
+color_ramp = SubResource("Gradient_r7lkc")
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_fi1t1"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pehve"]
+vertices = PackedVector2Array(8, 0, 0, 4, -8, 0, 0, -4)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0u5jo"]
+vertices = PackedVector2Array(8.375, -7.8203125, 0, 4, -8, 0, 0.046875, -11.7734375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(8.375857, -7.8174667, 0.050762177, -11.776963, -8, 0, 0, 4)])
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qubgg"]
+vertices = PackedVector2Array(8.8828125, -0.8125, 0, 4, -8.2734375, -7.6171875, -0.3515625, -12.6875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-0.35534, -12.690693, -8.274332, -7.614416, 0, 4, 8.883485, -0.81220436)])
+agent_radius = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7lkc"]
+texture = ExtResource("2_3vsio")
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -4)
+0:0/0/y_sort_origin = -7
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_fi1t1")
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, -4)
+1:0/0/y_sort_origin = -7
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_corner = 0
+1:0/0/terrains_peering_bit/bottom_right_side = 0
+1:0/0/terrains_peering_bit/bottom_corner = 0
+1:0/0/terrains_peering_bit/bottom_left_side = 0
+1:0/0/terrains_peering_bit/left_corner = 0
+1:0/0/terrains_peering_bit/top_left_side = 0
+1:0/0/terrains_peering_bit/top_corner = 0
+1:0/0/terrains_peering_bit/top_right_side = 0
+1:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_pehve")
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 4)
+2:0/0/terrain_set = 0
+2:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_0u5jo")
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 4)
+3:0/0/terrain_set = 0
+3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qubgg")
+1:1/size_in_atlas = Vector2i(1, 2)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 4)
+1:1/0/y_sort_origin = -4
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 3)
+2:1/0/y_sort_origin = -4
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, -8, 0, 0, 4, 8, 0)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_20ge4"]
+tile_shape = 1
+tile_size = Vector2i(16, 8)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "ground"
+terrain_set_0/terrain_0/color = Color(0.706905, 0.111495785, 0.13946742, 1)
+navigation_layer_0/layers = 1
+sources/0 = SubResource("TileSetAtlasSource_r7lkc")
+
+[node name="proc_gen_world" type="Node2D" unique_id=84699389]
+y_sort_enabled = true
+script = ExtResource("1_4mw8v")
+noise_height_text = SubResource("NoiseTexture2D_4mw8v")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1529141174]
+visible = false
+position_smoothing_speed = 100.0
+editor_draw_screen = false
+script = ExtResource("4_20ge4")
+
+[node name="Layers" type="Node2D" parent="." unique_id=1062520624]
+
+[node name="ground" type="TileMapLayer" parent="Layers" unique_id=1808413619]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -2)
+tile_set = SubResource("TileSet_20ge4")
+
+[node name="Player" parent="Layers/ground" unique_id=769355567 instance=ExtResource("3_r7lkc")]
+position = Vector2(0, 2)
+speed = 100.0
+
+[node name="walk_marker" type="Node2D" parent="Layers/ground" unique_id=451968642 groups=["marker"]]
+
+[node name="walk_marker" type="Sprite2D" parent="Layers/ground/walk_marker" unique_id=2137077462]
+modulate = Color(1, 1, 1, 0.20784314)
+y_sort_enabled = true
+scale = Vector2(0.5, 0.3)
+texture = ExtResource("5_20ge4")
+region_enabled = true
+region_rect = Rect2(0, 80, 16, 16)

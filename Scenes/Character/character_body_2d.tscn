@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://o6ujb85k382m" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap.png" id="2_c8k1p"]
 [ext_resource type="Texture2D" uid="uid://ijovv3gyo88e" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="3_23mte"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fi1t1"]
+radius = 4.0
+
 [sub_resource type="Animation" id="Animation_23mte"]
 length = 0.001
 tracks/0/type = "value"
@@ -85,7 +88,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=769355567 groups=["Player"]]
-z_index = 2
 y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_c8k1p")
@@ -93,17 +95,19 @@ speed = 25.0
 attack_range = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1914434882]
-position = Vector2(0, -7)
+position = Vector2(0, -8)
 texture = ExtResource("2_c8k1p")
 region_enabled = true
 region_rect = Rect2(34, 137.455, 16, 15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1848194684]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_fi1t1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1176036540]
-path_desired_distance = 2.0
-target_desired_distance = 2.0
-path_max_distance = 30.0
+path_desired_distance = 1.0
+target_desired_distance = 5.0
+path_max_distance = 10.0
 avoidance_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=854791464]
