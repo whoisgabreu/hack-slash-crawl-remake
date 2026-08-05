@@ -47,30 +47,6 @@ func _ready() -> void:
 	generate_world()
 	#player_scene.position = player_spawn_location
 
-#func generate_world():
-	#for x in range(width):
-		#for y in range(height):
-			#var noise_value = noise.get_noise_2d(x, y)
-			#noise_val_array.append(noise_value)
-			#
-			#if noise_value <= -0.1:
-				#ground.set_cell(Vector2i(x,y), source_id, water_atlas)
-			#
-			#if noise_value > -0.1:
-				#ground.set_cell(Vector2i(x,y), source_id, grass_atlas)
-				#if !player_spawn_location:
-					#player_spawn_location = Vector2i(x,y)
-					#
-			#if noise_value > 0.1:
-				#var instance = ENEMY.instantiate()
-				#add_child(instance)
-				#instance.position = Vector2i(x, y)
-				#
-			#if noise_value > 0.25:
-				#ground.set_cell(Vector2i(x,y), source_id, slope_atlas)
-			#if noise_value > 0.30:
-				#ground.set_cell(Vector2i(x,y), source_id, cliff_atlas)
-
 func generate_world():
 	for x in range(width):
 		for y in range(height):

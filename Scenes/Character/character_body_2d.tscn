@@ -88,15 +88,14 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=769355567 groups=["Player"]]
-y_sort_enabled = true
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_c8k1p")
 speed = 25.0
 attack_range = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1914434882]
-position = Vector2(0, -8)
 texture = ExtResource("2_c8k1p")
+offset = Vector2(0, -7)
 region_enabled = true
 region_rect = Rect2(34, 137.455, 16, 15)
 
