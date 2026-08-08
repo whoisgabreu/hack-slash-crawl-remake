@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://br4agmsn6hq0l"]
+
+[ext_resource type="Script" uid="uid://ch42w1p2etkqe" path="res://ui/inventory/inventory_panel.gd" id="1_smghy"]
+
+[node name="InventoryPanel" type="Control" unique_id=1335544146]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_smghy")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1216215563]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1403094308]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=691305493]
+layout_mode = 2
+text = "INVENTARIO"
+
+[node name="ItemsContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1150222245]
+layout_mode = 2

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://b73845igewdu2"]
+
+[ext_resource type="Script" uid="uid://b2qi8wsm32kir" path="res://resources/stat_modifier.gd" id="1_08p1k"]
+[ext_resource type="Script" uid="uid://s80xxvr16cgm" path="res://equipment/equipment.gd" id="2_651el"]
+
+[sub_resource type="Resource" id="Resource_skhx5"]
+script = ExtResource("1_08p1k")
+stat_type = 20
+value = 600.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[sub_resource type="Resource" id="Resource_jhxkx"]
+script = ExtResource("1_08p1k")
+stat_type = 8
+value = 100.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[resource]
+script = ExtResource("2_651el")
+item_name = "Dragon Scale Helmet"
+modifiers = Array[ExtResource("1_08p1k")]([SubResource("Resource_skhx5"), SubResource("Resource_jhxkx")])
+metadata/_custom_type_script = "uid://s80xxvr16cgm"

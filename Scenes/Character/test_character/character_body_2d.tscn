@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://c3r03k58y2wft"]
+
+[ext_resource type="Script" uid="uid://clcc6qfoevktk" path="res://Scenes/Character/test_character/test_Player.gd" id="1_7ach7"]
+[ext_resource type="Resource" uid="uid://bckbboxu1tt5u" path="res://resources/player_stats.tres" id="2_tu3k5"]
+[ext_resource type="Texture2D" uid="uid://o6ujb85k382m" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap.png" id="3_mlbq7"]
+[ext_resource type="Texture2D" uid="uid://ijovv3gyo88e" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="4_1ofnr"]
+[ext_resource type="Resource" uid="uid://c5f724oeno2f6" path="res://equipment/iron_helmet.tres" id="4_mlbq7"]
+[ext_resource type="Resource" uid="uid://bh2ahn55s27cm" path="res://equipment/iron_ring.tres" id="5_1ofnr"]
+[ext_resource type="Script" uid="uid://diliodsqpthbj" path="res://inventory/inventory.gd" id="7_mpd25"]
+[ext_resource type="Script" uid="uid://s80xxvr16cgm" path="res://equipment/equipment.gd" id="8_yeov6"]
+[ext_resource type="Resource" uid="uid://b73845igewdu2" path="res://equipment/dragon_scale_helmet.tres" id="9_yeov6"]
+[ext_resource type="Resource" uid="uid://bx3ihh0clkv3v" path="res://equipment/espada_de_madeira.tres" id="10_qcb0b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fi1t1"]
+radius = 4.0
+
+[sub_resource type="Animation" id="Animation_23mte"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1rtkg"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f28pr"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [-0.16580628, 0.16580628]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qh8dr"]
+_data = {
+&"RESET": SubResource("Animation_23mte"),
+&"idle": SubResource("Animation_1rtkg"),
+&"walk": SubResource("Animation_f28pr")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=769355567 groups=["Player"]]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_7ach7")
+base_stats = ExtResource("2_tu3k5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1914434882]
+texture = ExtResource("3_mlbq7")
+offset = Vector2(0, -7)
+region_enabled = true
+region_rect = Rect2(34, 137.455, 16, 15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1848194684]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_fi1t1")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1176036540]
+path_desired_distance = 1.0
+target_desired_distance = 5.0
+path_max_distance = 10.0
+avoidance_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=854791464]
+libraries/ = SubResource("AnimationLibrary_qh8dr")
+
+[node name="marker" type="Sprite2D" parent="." unique_id=375385891]
+modulate = Color(1, 0.36778843, 0.3002166, 1)
+rotation = 3.1415927
+texture = ExtResource("4_1ofnr")
+offset = Vector2(0, 50)
+region_enabled = true
+region_rect = Rect2(160, 128, 16, 16)
+
+[node name="Inventory" type="Node" parent="." unique_id=546969310]
+script = ExtResource("7_mpd25")
+items = Array[ExtResource("8_yeov6")]([ExtResource("4_mlbq7"), ExtResource("5_1ofnr"), ExtResource("9_yeov6"), ExtResource("10_qcb0b")])
+metadata/_custom_type_script = "uid://diliodsqpthbj"

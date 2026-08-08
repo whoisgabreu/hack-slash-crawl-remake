@@ -11,7 +11,7 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 		var player = get_tree().get_first_node_in_group("Player")
 		if player:
 			print(player.name)
-			player.select_target(self)
+			#player.select_target(self)
 		
 
 func take_damage(dmg):

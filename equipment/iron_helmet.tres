@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://c5f724oeno2f6"]
+
+[ext_resource type="Script" uid="uid://s80xxvr16cgm" path="res://equipment/equipment.gd" id="1_ru5wv"]
+[ext_resource type="Script" uid="uid://b2qi8wsm32kir" path="res://resources/stat_modifier.gd" id="1_w13ua"]
+
+[sub_resource type="Resource" id="Resource_6u1yc"]
+script = ExtResource("1_w13ua")
+stat_type = 20
+value = 30.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[sub_resource type="Resource" id="Resource_mlbq7"]
+script = ExtResource("1_w13ua")
+value = 5.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[resource]
+script = ExtResource("1_ru5wv")
+item_name = "Iron Helmet"
+modifiers = Array[ExtResource("1_w13ua")]([SubResource("Resource_6u1yc"), SubResource("Resource_mlbq7")])
+metadata/_custom_type_script = "uid://s80xxvr16cgm"

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://c470s1oaq1pye"]
+
+[ext_resource type="Script" uid="uid://c7iwyxggewfh2" path="res://ui/status/status_panel.gd" id="1_efp6m"]
+
+[node name="StatusPanel" type="Control" unique_id=257694146]
+z_index = 999
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_efp6m")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=532407143]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=187144929]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="PanelContainer/VBoxContainer" unique_id=724054070]
+layout_mode = 2
+text = "CHARACTER STATUS"
+
+[node name="HealthLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1462715227]
+layout_mode = 2
+text = "Vida Maxima: 0"
+
+[node name="ManaLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=394149147]
+layout_mode = 2
+text = "Mana Maxima: 0"
+
+[node name="CritChanceLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1254695395]
+layout_mode = 2
+text = "Chance de Critico: 5"
+
+[node name="CritDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1109361082]
+layout_mode = 2
+text = "Dano critico: 200"
+
+[node name="AttackSpeedLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=261950622]
+layout_mode = 2
+text = "Velocidade de Ataque: 1"
+
+[node name="CastSpeedLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=846729144]
+layout_mode = 2
+text = "Velocidade de Conjuracao: 1"
+
+[node name="PhysicalDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=23461496]
+layout_mode = 2
+text = "Dano Fisico: 0"
+
+[node name="FireDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2096306378]
+layout_mode = 2
+text = "Dano de Fogo: 0"
+
+[node name="ColdDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1122469506]
+layout_mode = 2
+text = "Dano de Frio: 0"
+
+[node name="LightningDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1070611953]
+layout_mode = 2
+text = "Dano de Raio: 0"
+
+[node name="PoisonDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1984692444]
+layout_mode = 2
+text = "Dano de Veneno: 0"
+
+[node name="HolyDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=917175954]
+layout_mode = 2
+text = "Dano Sagrado: 0"
+
+[node name="ShadowDamageLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1115574400]
+layout_mode = 2
+text = "Dano Sombrio 0"

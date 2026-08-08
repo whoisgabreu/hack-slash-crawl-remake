@@ -1,5 +1,10 @@
+class_name Character
 extends CharacterBody2D
 
+
+@export var base_stats: CharacterStats
+
+var stats: CharacterStats
 
 @export var speed: float = 100.0
 

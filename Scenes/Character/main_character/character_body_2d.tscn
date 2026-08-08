@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c08lkc2n3jbh4"]
 
 [ext_resource type="Script" uid="uid://dxg1hi3dw8rig" path="res://Scritps/Player.gd" id="1_c8k1p"]
+[ext_resource type="Resource" uid="uid://7fj4exbhm874" path="res://Scritps/resources/character_stats.tres" id="2_1rtkg"]
 [ext_resource type="Texture2D" uid="uid://o6ujb85k382m" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap.png" id="2_c8k1p"]
 [ext_resource type="Texture2D" uid="uid://ijovv3gyo88e" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="3_23mte"]
 
@@ -90,6 +91,7 @@ _data = {
 [node name="Player" type="CharacterBody2D" unique_id=769355567 groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_c8k1p")
+base_stats = ExtResource("2_1rtkg")
 speed = 25.0
 attack_range = 10.0
 

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Equipment" format=3 uid="uid://bx3ihh0clkv3v"]
+
+[ext_resource type="Script" uid="uid://b2qi8wsm32kir" path="res://resources/stat_modifier.gd" id="1_7cdj6"]
+[ext_resource type="Script" uid="uid://s80xxvr16cgm" path="res://equipment/equipment.gd" id="2_g63ym"]
+
+[sub_resource type="Resource" id="Resource_ov5iv"]
+script = ExtResource("1_7cdj6")
+stat_type = 4
+value = 5.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[sub_resource type="Resource" id="Resource_m8fbl"]
+script = ExtResource("1_7cdj6")
+stat_type = 2
+value = 2.0
+metadata/_custom_type_script = "uid://b2qi8wsm32kir"
+
+[resource]
+script = ExtResource("2_g63ym")
+item_name = "Espada de Madeira"
+slot = 2
+modifiers = Array[ExtResource("1_7cdj6")]([SubResource("Resource_ov5iv"), SubResource("Resource_m8fbl")])
+metadata/_custom_type_script = "uid://s80xxvr16cgm"
